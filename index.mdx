@@ -1,5 +1,5 @@
 ---
-title: Demo API Portal
+title: Tray.io Developers
 ---
 
 import {
@@ -16,85 +16,84 @@ import {
   H2,
   SectionHeader,
   NavBar,
-} from '@redocly/developer-portal/ui';
+} from "@redocly/developer-portal/ui";
 
-import icon1 from './images/icon1.png';
-import launchFastIcon from './images/launch-fast.svg';
-import icon3 from './images/icon3.png';
-import bookManagementIcon from './images/book-management.svg';
-import foundOrPrivate from './images/found-or-private.svg';
+import icon1 from "./images/icon1.png";
+import launchFastIcon from "./images/launch-fast.svg";
+import icon3 from "./images/icon3.png";
+import bookManagementIcon from "./images/book-management.svg";
+import foundOrPrivate from "./images/found-or-private.svg";
 
 export default LandingLayout;
 
 <Jumbotron>
-  <NavBar location={props.location} standalone={false} />
-  <H1>Redocly training</H1>
-  <H2>A starter developer portal with training exercises</H2>
-  <Flex p={20} justifyContent="center">
-    {/* <Button size="xlarge" to="https://app.redoc.ly">
-      Redocly app
-    </Button> */}
-     <Button variant="outlined" size="xlarge" to="developer-portal/index.md">
-      Get started
-    </Button>
-    {/* <Button variant="outlined" size="xlarge" to="https://redoc.ly/docs">
-      Docs
-    </Button> */}
+  <NavBar
+    style={{ fontSize: "1.5rem" }}
+    location={props.location}
+    standalone={false}
+  />
+  <Flex p={20} justifyContent="space-evenly" style={{ flexGrow: "1" }}>
+    <div style={{ marginRight: "10px" }}>
+      <h1 style={{ textAlign: "left" }}>Tray.io Developer portal</h1>
+      <h2 style={{ textAlign: "left" }}>
+        Leverage Tray.io's APIs to power your embedded integrations
+      </h2>
+      <Flex justifyContent="flex-start">
+        {/* <Button size="xlarge" to="https://app.redoc.ly">
+          Redocly app
+        </Button> */}
+        <Button variant="outlined" size="xlarge" to="developer-portal/index.md">
+          Get started
+        </Button>
+        {/* <Button variant="outlined" size="xlarge" to="https://redoc.ly/docs">
+          API Docs
+        </Button> */}
+      </Flex>
+    </div>
+    <Flex>
+      <img
+        alt="Tray Developer docs - Hero"
+        loading="lazy"
+        src="https://images.ctfassets.net/7rbn0raz0t75/LT4m5nSsFGbCu0G9K63nw/97b0c4874ca334f9342380ea59c39c24/Embedded_-_Connectivity.png"
+        width="100%"
+        height="auto"
+      />
+    </Flex>
   </Flex>
 </Jumbotron>
 <Box my={25}>
-  <SectionHeader>
-    Create your <Emphasis> developer portal </Emphasis> today!
-  </SectionHeader>
-  <FlexSection justifyContent="space-around" flexWrap="wrap">
-    <ThinTile to="developer-portal/index.md" icon={icon1} header="Rock">
-        Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-        aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril labitur
-        an usu.Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo
-        invenire aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril
-        labitur an usu.Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea
-        justo invenire aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing.
-    </ThinTile>
-    <ThinTile to="developer-portal/index.md" icon={launchFastIcon} header="Paper">
-        Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-        aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril labitur
-        an usu.
-    </ThinTile>
-    <ThinTile to="contact.mdx" icon={icon3} header="Scissors">
-        Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-        aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril labitur
-        an usu.
-    </ThinTile>
-  </FlexSection>
-  {/* <Jumbotron parallaxEffect bgImage={icon1}>
-    <H1>Tutorials</H1>
-    <H2>Get setup faster...</H2>
-  </Jumbotron> */}
-  <SectionHeader>
-    <Emphasis>Need help? </Emphasis>
-    Try our training exercises.
-  </SectionHeader>
-  <FlexSection justifyContent="space-around" flexWrap="wrap">
-    <WideTile to="developer-portal/index.md" header="Rock">
-        Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-        aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril labitur
-        an usu.
-    </WideTile>
-    <WideTile to="developer-portal/index.md" header="Paper">
-        Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-        aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril labitur
-        an usu.
-    </WideTile>
-    <WideTile to="developer-portal/index.md" header="Scissors">
-        Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-        aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril labitur
-        an usu.
-    </WideTile>
-    <WideTile to="developer-portal/index.md" header="Go">
-        Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-        aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril labitur
-        an usu.
-    </WideTile>
-  </FlexSection>
+  <h2 style={{ margin: 0, fontSize: "2rem", marginBottom: "1rem" }}>
+    <Emphasis>Build with Tray.io APIs</Emphasis>
+  </h2>
+  <div flexWrap="wrap">
+    <p>
+      Tray's APIs allow you to leverage the power of Tray's service connectors,
+      without having to make use of the Builder UI.
+    </p>
+    <p>
+      This gives you tremendous power to integrate powerful service operations
+      into your own apps.
+    </p>
+    <p>
+      The following APIs are available:
+      <ul>
+        <li>
+          <Emphasis>Auths API</Emphasis> for creating, retrieving and deleting
+          authentications for particular services
+        </li>
+        <li>
+          <Emphasis>Connectors API</Emphasis> for calling individual operations
+          for particular service connectors
+        </li>
+        <li>
+          <Emphasis>Embedded API (GraphQL)</Emphasis> for managing and
+          displaying the Solutions and Instances which drive your Tray
+          integrations
+        </li>
+      </ul>
+    </p>
+    <h3 style={{ textAlign: "right", paddingRight: "2rem" }}>
+      Happy building!
+    </h3>
+  </div>
 </Box>
-

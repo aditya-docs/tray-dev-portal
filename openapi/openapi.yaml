@@ -1,0 +1,1564 @@
+openapi: 3.0.3
+info:
+  title: Tray APIs
+  version: ""
+  x-logo:
+    url: tray-logo.svg
+    altText: Tray.io logo
+paths:
+  /core/v1/authentications:
+    post:
+      summary: Create user authentication
+      description:
+        $ref: descriptions/endpoints/authentications/createAuthentication.html
+      operationId: create-user-authentication
+      parameters:
+        - name: Authorization
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Bearer 3fd74d349xxxxxxxxxxxxxxxxxxxxxxxxd90df521
+          description: Pass user token here
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreatePublicUserAuthentication"
+        required: true
+      responses:
+        "200":
+          description:
+            $ref: descriptions/responses/authentications/createAuthentication200.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreatePublicUserAuthenticationResult"
+        "400":
+          description:
+            $ref: descriptions/responses/authentications/createAuthentication400.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvalidInput"
+        "401":
+          description:
+            $ref: descriptions/responses/authentications/createAuthentication401.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Unauthorized"
+        "403":
+          description:
+            $ref: descriptions/responses/authentications/createAuthentication403.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Forbidden"
+        "404":
+          description:
+            $ref: descriptions/responses/authentications/createAuthentication404.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResourceNotFound"
+        "429":
+          description:
+            $ref: descriptions/responses/authentications/createAuthentication429.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LimitExceeded"
+        "500":
+          description:
+            $ref: descriptions/responses/authentications/createAuthentication500.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalError"
+        default:
+          description:
+            $ref: descriptions/responses/defaultError.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalError"
+      tags:
+        - authentications
+  /core/v1/authentications/{authentication-id}:
+    get:
+      summary: Get user authentication
+      description:
+        $ref: descriptions/endpoints/authentications/getAuthenticationById.html
+      operationId: get-user-authentication
+      parameters:
+        - name: authentication-id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          example: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+          description: Unique ID of the authentication in Tray
+        - name: Authorization
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Bearer 3fd74d349xxxxxxxxxxxxxxxxxxxxxxxxd90df521
+          description: Pass your master token here
+      responses:
+        "200":
+          description:
+            $ref: descriptions/responses/authentications/getAuthenticationById200.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetUserAuthenticationResult"
+        "400":
+          description:
+            $ref: descriptions/responses/authentications/getAuthenticationById400.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvalidInput"
+        "401":
+          description:
+            $ref: descriptions/responses/authentications/getAuthenticationById401.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Unauthorized"
+        "403":
+          description:
+            $ref: descriptions/responses/authentications/getAuthenticationById403.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Forbidden"
+        "404":
+          description:
+            $ref: descriptions/responses/authentications/getAuthenticationById404.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResourceNotFound"
+        "429":
+          description:
+            $ref: descriptions/responses/authentications/getAuthenticationById429.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LimitExceeded"
+        "500":
+          description:
+            $ref: descriptions/responses/authentications/getAuthenticationById500.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalError"
+        default:
+          description:
+            $ref: descriptions/responses/defaultError.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalError"
+      tags:
+        - authentications
+    delete:
+      summary: Delete user authentication
+      description:
+        $ref: descriptions/endpoints/authentications/deleteAuthenticationById.html
+      operationId: delete-user-authentication
+      parameters:
+        - name: authentication-id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          example: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+          description: Unique ID of the authentication in Tray
+        - name: Authorization
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Bearer 3fd74d349xxxxxxxxxxxxxxxxxxxxxxxxd90df521
+          description: Pass your master token here
+      responses:
+        "200":
+          description: $ref:descriptions/responses/authentications/deleteAuthenticationById200.html
+        "400":
+          description: $ref:descriptions/responses/authentications/deleteAuthenticationById400.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvalidInput"
+        "401":
+          description: $ref:descriptions/responses/authentications/deleteAuthenticationById401.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Unauthorized"
+        "403":
+          description: $ref:descriptions/responses/authentications/deleteAuthenticationById403.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Forbidden"
+        "404":
+          description: $ref:descriptions/responses/authentications/deleteAuthenticationById404.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResourceNotFound"
+        "429":
+          description: $ref:descriptions/responses/authentications/deleteAuthenticationById429.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LimitExceeded"
+        "500":
+          description: $ref:descriptions/responses/authentications/deleteAuthenticationById500.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalError"
+        default:
+          description:
+            $ref: descriptions/responses/defaultError.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalError"
+      tags:
+        - authentications
+  /core/v1/authentications/{authentication-id}/full:
+    get:
+      summary: Decrypt user authentication
+      description:
+        $ref: descriptions/endpoints/authentications/getFullAuthenticationById.html
+      operationId: decrypt-user-authentication
+      parameters:
+        - name: authentication-id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          example: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+          description: Unique ID of the authentication in Tray
+        - name: Authorization
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Bearer 3fd74d349xxxxxxxxxxxxxxxxxxxxxxxxd90df521
+          description: Pass your master token here
+      responses:
+        "200":
+          description: $ref:descriptions/responses/authentications/getFullAuthenticationById200.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetFullUserAuthenticationResult"
+        "400":
+          description: $ref:descriptions/responses/authentications/getFullAuthenticationById400.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvalidInput"
+        "401":
+          description: $ref:descriptions/responses/authentications/getFullAuthenticationById401.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Unauthorized"
+        "403":
+          description: $ref:descriptions/responses/authentications/getFullAuthenticationById403.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Forbidden"
+        "404":
+          description: $ref:descriptions/responses/authentications/getFullAuthenticationById404.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResourceNotFound"
+        "429":
+          description: $ref:descriptions/responses/authentications/getFullAuthenticationById429.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LimitExceeded"
+        "500":
+          description: $ref:descriptions/responses/authentications/getFullAuthenticationById500.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalError"
+        default:
+          description:
+            $ref: descriptions/responses/defaultError.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalError"
+      tags:
+        - authentications
+  /core/v1/services/{service-name}/versions/{service-version}/environments:
+    get:
+      summary: Get service environments
+      description:
+        $ref: descriptions/endpoints/services/getServiceEnvironments.html
+      operationId: get-service-environments
+      parameters:
+        - name: service-name
+          in: path
+          required: true
+          schema:
+            type: string
+          example: trello
+          description: Name of the service as obtained from the GET /connectors
+        - name: service-version
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+          example: 2
+          description: Version of the service as obtained from the GET /connectors
+        - name: Authorization
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Bearer 3fd74d349xxxxxxxxxxxxxxxxxxxxxxxxd90df521
+          description: Pass your master token here
+      responses:
+        "200":
+          description:
+            $ref: descriptions/responses/services/getServiceEnvironments200.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PublicServiceEnvironmentList"
+        "400":
+          description:
+            $ref: descriptions/responses/services/getServiceEnvironments400.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvalidInput"
+        "401":
+          description:
+            $ref: descriptions/responses/services/getServiceEnvironments401.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Unauthorized"
+        "403":
+          description:
+            $ref: descriptions/responses/services/getServiceEnvironments403.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Forbidden"
+        "404":
+          description:
+            $ref: descriptions/responses/services/getServiceEnvironments404.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResourceNotFound"
+        "429":
+          description:
+            $ref: descriptions/responses/services/getServiceEnvironments429.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LimitExceeded"
+        "500":
+          description:
+            $ref: descriptions/responses/services/getServiceEnvironments500.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalError"
+        default:
+          description:
+            $ref: descriptions/responses/defaultError.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalError"
+      tags:
+        - services
+  /core/v1/connectors:
+    get:
+      summary: Get Connectors
+      operationId: get-connectors
+      parameters:
+        - name: Authorization
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Bearer 3fd74d349xxxxxxxxxxxxxxxxxxxxxxxxd90df521
+          description: Pass your master token here
+      responses:
+        "200":
+          description:
+            $ref: descriptions/responses/connectors/getConnectors200.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PublicConnectorList"
+              examples:
+                Connector List:
+                  value:
+                    elements:
+                      - name: slack
+                        version: "9.0"
+                        title: Slack
+                        description: Slack connector
+                      - name: twilio-output
+                        version: "2.1"
+                        title: Twilio
+                        description: Cloud communication platform for developers
+                      - name: shopify
+                        version: "4.1"
+                        title: Shopify
+                        description: >-
+                          Shopify gives you everything you need to build a
+                          successful online business.
+        "400":
+          description:
+            $ref: descriptions/responses/connectors/getConnectors400.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvalidInput"
+        "401":
+          description:
+            $ref: descriptions/responses/connectors/getConnectors401.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Unauthorized"
+        "403":
+          description:
+            $ref: descriptions/responses/connectors/getConnectors403.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Forbidden"
+        "404":
+          description:
+            $ref: descriptions/responses/connectors/getConnectors404.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResourceNotFound"
+        "429":
+          description:
+            $ref: descriptions/responses/connectors/getConnectors429.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LimitExceeded"
+        "500":
+          description:
+            $ref: descriptions/responses/connectors/getConnectors500.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalError"
+        default:
+          description:
+            $ref: descriptions/responses/defaultError.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalError"
+      tags:
+        - connectors
+      description:
+        $ref: descriptions/endpoints/connectors/getConnectors.html
+  /core/v1/connectors/{connector-name}/versions/{connector-version}/operations:
+    get:
+      summary: Get Connector Operations
+      operationId: get-connector-operations
+      parameters:
+        - name: connector-name
+          in: path
+          required: true
+          schema:
+            type: string
+          example: slack
+          description: The name of the connector
+        - name: connector-version
+          in: path
+          required: true
+          schema:
+            type: string
+          example: "9.1"
+          description: The version of the connector
+        - name: Authorization
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Bearer 3fd74d349xxxxxxxxxxxxxxxxxxxxxxxxd90df521
+          description: Pass your master token here
+      responses:
+        "200":
+          description:
+            $ref: descriptions/responses/connectors/getOperations200.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PublicConnectorOperationList"
+              examples:
+                Slack Operations List:
+                  value:
+                    elements:
+                      - name: send_message
+                        title: Send Message
+                        description: Send a message to a user or channel.
+                        inputSchema:
+                          $schema: >-
+                            https://api.tray.io/core/v1/connectors/operations/input-schema#
+                          type: object
+                          properties:
+                            message:
+                              type: string
+                              description: The content of the reminder
+                              title: Message
+                            description:
+                              type: string
+                              description: The description of the reminder
+                              title: Description
+                            time:
+                              type: string
+                              description: >-
+                                When this reminder should happen. Some examples
+                                that work: 1458678068, 20, in 5 minutes,
+                                tomorrow, at 3:30pm, on Tuesday, or next week.
+                              title: Time
+                            workspace_id:
+                              type: string
+                              description: >-
+                                The workspace id that has the channel where the
+                                reminder will be sent
+                              title: Workspace
+                              lookup:
+                                message: list_workspaces_ddl
+                                input: {}
+                            channel_id:
+                              type: string
+                              title: Channel
+                              description: >-
+                                The ID of the channel where the reminder will be
+                                sent
+                              lookup:
+                                message: list_channels_ddl
+                                input:
+                                  include_private_channels: false
+                                  workspace_id: "{{{workspace_id}}}"
+                          required:
+                            - message
+                            - time
+                            - channel_id
+                          advanced:
+                            - description
+                          additionalProperties: false
+                        outputSchema:
+                          $schema: >-
+                            https://api.tray.io/core/v1/connectors/operations/output-schema#
+                          type: object
+                          properties:
+                            reminder_id:
+                              type: string
+                              description: The content of the reminder
+                              title: Message
+                        hasDynamicOutput: false
+                        authScopes:
+                          - chat:write:bot
+                          - chat:write:user
+                          - channels:write
+                          - channels:read
+                      - name: send_reminder
+                        title: Send Reminder
+                        description: Periodically sends a reminder to a channel
+                        inputSchema:
+                          $schema: >-
+                            https://api.tray.io/core/v1/connectors/operations/input-schema#
+                          type: object
+                          properties:
+                            message:
+                              type: string
+                              description: The content of the reminder
+                              title: Message
+                            description:
+                              type: string
+                              description: The description of the reminder
+                              title: Description
+                            time:
+                              type: string
+                              description: >-
+                                When this reminder should happen. Some examples
+                                that work: 1458678068, 20, in 5 minutes,
+                                tomorrow, at 3:30pm, on Tuesday, or next week.
+                              title: Time
+                            workspace_id:
+                              type: string
+                              description: >-
+                                The workspace id that has the channel where the
+                                reminder will be sent
+                              title: Workspace
+                              lookup:
+                                message: list_workspaces_ddl
+                                input: {}
+                            channel_id:
+                              type: string
+                              title: Channel
+                              description: >-
+                                The ID of the channel where the reminder will be
+                                sent
+                              lookup:
+                                message: list_channels_ddl
+                                input:
+                                  include_private_channels: false
+                                  workspace_id: "{{{workspace_id}}}"
+                          required:
+                            - message
+                            - time
+                            - channel_id
+                          advanced:
+                            - description
+                          additionalProperties: false
+                        outputSchema:
+                          $schema: >-
+                            https://api.tray.io/core/v1/connectors/operations/output-schema#
+                          type: object
+                          properties:
+                            reminder_id:
+                              type: string
+                              description: The content of the reminder
+                              title: Message
+                        hasDynamicOutput: false
+                        authScopes:
+                          - reminder:send
+                Google Sheets Operations List:
+                  value:
+                    elements:
+                      - name: get_rows
+                        title: Get Rows
+                        description: Get data from a worksheet of a spreadsheet.
+                        inputSchema:
+                          $schema: >-
+                            https://api.tray.io/core/v1/connectors/operations/input-schema#
+                          advanced: []
+                          additionalProperties: false
+                          type: object
+                          properties:
+                            worksheet_name:
+                              type: string
+                              description: The name of the sheet inside the spreadsheet
+                              lookup:
+                                operation: list_worksheets_ddl_return_name
+                                input:
+                                  spreadsheet_id: "{{spreadsheet_id}}"
+                              title: Worksheet name
+                            number_of_rows:
+                              type: integer
+                              default: 100
+                              description: The number of the rows you wish to get.
+                              title: Number of rows
+                            spreadsheet_id:
+                              type: string
+                              description: The ID of the desired spreadsheet
+                              title: Spreadsheet ID
+                            filter:
+                              type: object
+                              properties:
+                                column_heading:
+                                  type: string
+                                  description: The column heading.
+                                  lookup:
+                                    operation: list_worksheet_column_headers_ddl
+                                    input:
+                                      spreadsheet_id: "{{spreadsheet_id}}"
+                                      worksheet_name: "{{worksheet_name}}"
+                                  title: Column heading
+                                operator:
+                                  type: string
+                                  enum:
+                                    - Equal to
+                                    - Not equal to
+                                    - Greater than
+                                    - Less than
+                                    - Greater than or equal to
+                                    - Less than or equal to
+                                    - Text contains
+                                    - Text doesn't contain
+                                    - Empty cells
+                                  description: >-
+                                    How should the value in the column validate
+                                    against the supplied value. Please check
+                                    Tray docs for more information on the
+                                    operators used.
+                                  title: Operator
+                                value:
+                                  type:
+                                    - string
+                                    - number
+                                    - boolean
+                                  description: The condition value.
+                                  title: Value
+                                sort_direction:
+                                  type: string
+                                  enum:
+                                    - ascending
+                                    - descending
+                                  description: >-
+                                    How would you like results to be sorted?
+                                    Ascending or Descending. This only works for
+                                    numerical fields.
+                                  title: Sort direction
+                                  enumLabels:
+                                    - Ascending
+                                    - Descending
+                              required: []
+                              advanced: []
+                              additionalProperties: false
+                              description: >-
+                                The conditions that the row should match. If
+                                using a filter, all fields must be filled in.
+                              title: Filter
+                            format_response:
+                              type: boolean
+                              description: >-
+                                Use the results of the 1st row as keys
+                                ('headers') for values of subsequent rows'
+                                results.
+                              title: Format response
+                          required:
+                            - spreadsheet_id
+                            - worksheet_name
+                            - number_of_rows
+                        outputSchema:
+                          $schema: >-
+                            https://api.tray.io/core/v1/connectors/operations/output-schema#
+                          type: object
+                          properties:
+                            results:
+                              type: array
+                              items:
+                                type: array
+                        hasDynamicOutput: false
+                        authScopes: []
+                      - name: create_row
+                        title: Create Row
+                        description: Add a row to a Google Sheet.
+                        inputSchema:
+                          $schema: >-
+                            https://api.tray.io/core/v1/connectors/operations/input-schema#
+                          advanced: []
+                          additionalProperties: false
+                          type: object
+                          properties:
+                            spreadsheet_id:
+                              type: string
+                              description: The ID of the desired spreadsheet
+                              title: Spreadsheet ID
+                            worksheet_name:
+                              type: string
+                              description: The name of the sheet inside the spreadsheet
+                              lookup:
+                                operation: list_worksheets_ddl_return_name
+                                input:
+                                  spreadsheet_id: "{{spreadsheet_id}}"
+                              title: Worksheet name
+                            data:
+                              type: array
+                              title: Row data
+                              description: The row data to insert.
+                              items:
+                                type: object
+                                properties:
+                                  column_heading:
+                                    type: string
+                                    description: The column heading.
+                                    lookup:
+                                      operation: list_worksheet_column_headers_ddl
+                                      input:
+                                        spreadsheet_id: "{{spreadsheet_id}}"
+                                        worksheet_name: "{{worksheet_name}}"
+                                    title: Column heading
+                                  value:
+                                    type:
+                                      - string
+                                      - number
+                                      - boolean
+                                    description: What value to insert into this cell.
+                                    title: Value
+                                required:
+                                  - column_heading
+                                  - value
+                                advanced: []
+                                additionalProperties: false
+                                title: Field
+                                description: >-
+                                  Select a column by its header, and assign a
+                                  value to that cell of your new row.
+                              additionalItems: true
+                            value_input_option:
+                              type: string
+                              enum:
+                                - RAW
+                                - USER_ENTERED
+                              default: RAW
+                              description: >-
+                                Value Input Option determines how input data
+                                should be interpreted. Selecting raw will result
+                                in data not being parsed and stored as is,
+                                whereas user_entered will result in values being
+                                parsed as if the user had typed them directly
+                                into a sheet.
+                              title: Value input option
+                              enumLabels:
+                                - Raw value
+                                - User entered
+                          required:
+                            - spreadsheet_id
+                            - worksheet_name
+                            - data
+                            - value_input_option
+                        outputSchema:
+                          $schema: >-
+                            https://api.tray.io/core/v1/connectors/operations/output-schema#
+                          type: object
+                          properties:
+                            spreadsheetId:
+                              type: string
+                            updates:
+                              type: object
+                              properties:
+                                spreadsheetId:
+                                  type: string
+                                updatedRange:
+                                  type: string
+                                updatedRows:
+                                  type: number
+                                updatedColumns:
+                                  type: number
+                                updatedCells:
+                                  type: number
+                        hasDynamicOutput: false
+                        authScopes: []
+        "400":
+          description:
+            $ref: descriptions/responses/connectors/getOperations400.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvalidInput"
+        "401":
+          description:
+            $ref: descriptions/responses/connectors/getOperations401.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Unauthorized"
+        "403":
+          description:
+            $ref: descriptions/responses/connectors/getOperations403.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Forbidden"
+        "404":
+          description:
+            $ref: descriptions/responses/connectors/getOperations404.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResourceNotFound"
+        "429":
+          description:
+            $ref: descriptions/responses/connectors/getOperations429.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LimitExceeded"
+        "500":
+          description:
+            $ref: descriptions/responses/connectors/getOperations500.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalError"
+        default:
+          description:
+            $ref: descriptions/responses/defaultError.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalError"
+      tags:
+        - connectors
+      description:
+        $ref: descriptions/endpoints/connectors/getOperations.html
+  /core/v1/connectors/{connector-name}/versions/{connector-version}/call:
+    post:
+      summary: Call Connector
+      description:
+        $ref: descriptions/endpoints/connectors/callConnector.html
+      operationId: call-connector
+      parameters:
+        - name: connector-name
+          in: path
+          required: true
+          schema:
+            type: string
+          example: slack
+          description: The name of the connector
+        - name: connector-version
+          in: path
+          required: true
+          schema:
+            type: string
+          example: "9.1"
+          description: The version of the connector
+        - name: Authorization
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Bearer 3fd74d349xxxxxxxxxxxxxxxxxxxxxxxxd90df521
+          description: Pass your master token here
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PublicConnectorCallPayload"
+            examples:
+              Slack Send Message:
+                value:
+                  operation: send_message
+                  authId: 6bd02ec5-b27d-4cab-a579-e97643d675ea
+                  input:
+                    channel: <aChannel>
+                    text: aText
+              Slack List Users DDL:
+                value:
+                  operation: list_users_and_conversations_ddl
+                  authId: 84409d32-9734-47ed-93c3-713951d65ceb
+                  input: {}
+              Google Sheets Get Rows:
+                value:
+                  operation: get_rows
+                  authId: 23711533-b9c3-4552-bd0a-b1c7d39d2fe6
+                  input:
+                    spreadsheet_id: <aSpreadSheetId>
+                    worksheet_name: <aWorksheetName>
+                    number_of_rows: 100
+        required: true
+      responses:
+        "200":
+          description:
+            $ref: descriptions/responses/connectors/callConnector200.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PublicConnectorCallResult"
+              examples:
+                Slack Send Message:
+                  value:
+                    outcome: success
+                    output:
+                      ok: true
+                      channel: <aChannel>
+                      ts: "1654555157.195399"
+                      message:
+                        type: message
+                        subtype: bot_message
+                        text: test
+                        ts: "1654555157.195399"
+                        username: <defaultUsername>
+                        bot_id: <aBotId>
+                        app_id: <anAppId>
+                Slack List Users DDL:
+                  value:
+                    outcome: success
+                    output:
+                      result:
+                        - value: <aUserId>
+                          text: A User Name
+                        - value: <anotherUserId>
+                          text: Another User Name
+                Google Sheets Get Rows:
+                  value:
+                    outcome: success
+                    output:
+                      results:
+                        - row_number: 1
+                          result:
+                            - value1.1
+                            - value1.2
+                        - row_number: 2
+                          result:
+                            - value2.1
+                            - value2.2
+        "400":
+          description:
+            $ref: descriptions/responses/connectors/callConnector400.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvalidInput"
+        "401":
+          description:
+            $ref: descriptions/responses/connectors/callConnector401.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Unauthorized"
+        "403":
+          description:
+            $ref: descriptions/responses/connectors/callConnector403.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Forbidden"
+        "404":
+          description:
+            $ref: descriptions/responses/connectors/callConnector404.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResourceNotFound"
+        "429":
+          description:
+            $ref: descriptions/responses/connectors/callConnector429.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LimitExceeded"
+        "500":
+          description:
+            $ref: descriptions/responses/connectors/callConnector500.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalError"
+        default:
+          description:
+            $ref: descriptions/responses/defaultError.html
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalError"
+      tags:
+        - connectors
+components:
+  schemas:
+    AuthenticationType:
+      type: string
+      enum:
+        - token
+        - oauth1
+        - oauth2
+        - oauth2password
+        - oauth2client_credentials
+        - builtin
+    CreatePublicUserAuthentication:
+      required:
+        - name
+        - workspaceId
+        - serviceEnvironmentId
+        - data
+      type: object
+      properties:
+        name:
+          type: string
+          description: ""
+        workspaceId:
+          type: string
+          description: ""
+        serviceEnvironmentId:
+          type: string
+          description: Id of the service. Can be obtained by GET /services
+        data:
+          type: object
+          additionalProperties:
+            oneOf:
+              - type: array
+                items:
+                  type: object
+              - type: boolean
+              - type: integer
+              - type: object
+                additionalProperties:
+                  type: object
+              - type: string
+          description: ""
+        formData:
+          type: object
+          additionalProperties:
+            oneOf:
+              - type: array
+                items:
+                  type: object
+              - type: boolean
+              - type: integer
+              - type: object
+                additionalProperties:
+                  type: object
+              - type: string
+          description: ""
+        scopes:
+          type: array
+          items:
+            type: string
+          description: ""
+    CreatePublicUserAuthenticationResult:
+      required:
+        - authenticationId
+      type: object
+      properties:
+        authenticationId:
+          type: string
+          format: uuid
+          description: ""
+        externalId:
+          type: string
+          format: uuid
+          description: ""
+    Forbidden:
+      required:
+        - message
+      type: object
+      properties:
+        message:
+          type: string
+          description: ""
+        code:
+          type: string
+          description: ""
+    GetFullUserAuthenticationResult:
+      required:
+        - id
+        - name
+        - serviceEnvironmentId
+        - data
+        - formData
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: ""
+        name:
+          type: string
+          description: ""
+        workspaceId:
+          type: string
+          description: ""
+        serviceEnvironmentId:
+          type: string
+          description: ""
+        data:
+          type: object
+          additionalProperties:
+            oneOf:
+              - type: array
+                items:
+                  type: object
+              - type: boolean
+              - type: integer
+              - type: object
+                additionalProperties:
+                  type: object
+              - type: string
+          description: ""
+        formData:
+          oneOf:
+            - type: array
+              items:
+                type: object
+            - type: boolean
+            - type: integer
+            - type: object
+              additionalProperties:
+                type: object
+            - type: string
+          description: ""
+        scopes:
+          type: array
+          items:
+            type: string
+          description: ""
+    GetUserAuthenticationResult:
+      required:
+        - id
+        - name
+        - serviceEnvironmentId
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: ""
+        name:
+          type: string
+          description: ""
+        workspaceId:
+          type: string
+          description: ""
+        serviceEnvironmentId:
+          type: string
+          description: ""
+        scopes:
+          type: array
+          items:
+            type: string
+          description: ""
+      description: ""
+    InternalError:
+      required:
+        - message
+      type: object
+      properties:
+        message:
+          type: string
+          description: ""
+        code:
+          type: string
+          description: ""
+      description: ""
+    InvalidInput:
+      required:
+        - message
+      type: object
+      properties:
+        message:
+          type: string
+          description: ""
+        code:
+          type: string
+          description: ""
+      description: ""
+    LimitExceeded:
+      required:
+        - message
+      type: object
+      properties:
+        message:
+          type: string
+          description: ""
+        code:
+          type: string
+          description: ""
+      description: ""
+    PublicServiceEnvironment:
+      required:
+        - id
+        - title
+        - authenticationType
+        - formDataSchema
+        - dataSchema
+      type: object
+      properties:
+        id:
+          type: string
+          description: ""
+        title:
+          type: string
+          description: ""
+        authenticationType:
+          $ref: "#/components/schemas/AuthenticationType"
+        formDataSchema:
+          type: object
+          additionalProperties:
+            oneOf:
+              - type: array
+                items:
+                  type: object
+              - type: boolean
+              - type: integer
+              - type: object
+                additionalProperties:
+                  type: object
+              - type: string
+          description: ""
+        dataSchema:
+          type: object
+          additionalProperties:
+            oneOf:
+              - type: array
+                items:
+                  type: object
+              - type: boolean
+              - type: integer
+              - type: object
+                additionalProperties:
+                  type: object
+              - type: string
+          description: ""
+      description: ""
+    PublicServiceEnvironmentList:
+      type: object
+      properties:
+        elements:
+          type: array
+          items:
+            $ref: "#/components/schemas/PublicServiceEnvironment"
+      description: ""
+    ResourceNotFound:
+      required:
+        - message
+      type: object
+      properties:
+        message:
+          type: string
+          description: ""
+        code:
+          type: string
+          description: ""
+      description: ""
+    Unauthorized:
+      required:
+        - message
+      type: object
+      properties:
+        message:
+          type: string
+          description: ""
+        code:
+          type: string
+          description: ""
+      description: ""
+    PublicConnector:
+      required:
+        - name
+        - version
+        - title
+        - description
+      type: object
+      properties:
+        name:
+          type: string
+          description: ""
+        version:
+          type: string
+          description: ""
+        title:
+          type: string
+          description: ""
+        description:
+          type: string
+          description: ""
+      description: ""
+    PublicConnectorCallPayload:
+      required:
+        - operation
+        - input
+      type: object
+      properties:
+        operation:
+          type: string
+          description: ""
+        authId:
+          type: string
+          format: uuid
+          description: ""
+        input:
+          type: object
+          additionalProperties:
+            oneOf:
+              - type: array
+                items:
+                  type: object
+              - type: boolean
+              - type: integer
+              - type: object
+                additionalProperties:
+                  type: object
+              - type: string
+          description: ""
+        returnOutputSchema:
+          type: boolean
+          description: ""
+      description: ""
+    PublicConnectorCallResult:
+      required:
+        - outcome
+        - output
+      type: object
+      properties:
+        outcome:
+          $ref: "#/components/schemas/PublicConnectorCallResultOutcome"
+        output:
+          type: object
+          additionalProperties:
+            oneOf:
+              - type: array
+                items:
+                  type: object
+              - type: boolean
+              - type: integer
+              - type: object
+                additionalProperties:
+                  type: object
+              - type: string
+          description: ""
+      description: ""
+    PublicConnectorCallResultOutcome:
+      type: string
+      enum:
+        - success
+        - error
+      description: ""
+    PublicConnectorList:
+      type: object
+      properties:
+        elements:
+          type: array
+          items:
+            $ref: "#/components/schemas/PublicConnector"
+          description: ""
+      description: ""
+    PublicConnectorOperation:
+      required:
+        - name
+        - title
+        - description
+        - inputSchema
+        - outputSchema
+        - hasDynamicOutput
+      type: object
+      properties:
+        name:
+          type: string
+          description: ""
+        title:
+          type: string
+          description: ""
+        description:
+          type: string
+          description: ""
+        inputSchema:
+          type: object
+          additionalProperties:
+            oneOf:
+              - type: array
+                items:
+                  type: object
+              - type: boolean
+              - type: integer
+              - type: object
+                additionalProperties:
+                  type: object
+              - type: string
+          description: ""
+        outputSchema:
+          type: object
+          additionalProperties:
+            oneOf:
+              - type: array
+                items:
+                  type: object
+              - type: boolean
+              - type: integer
+              - type: object
+                additionalProperties:
+                  type: object
+              - type: string
+          description: ""
+        hasDynamicOutput:
+          type: boolean
+          description: ""
+        authScopes:
+          type: array
+          items:
+            type: string
+          description: ""
+      description: ""
+    PublicConnectorOperationList:
+      type: object
+      properties:
+        elements:
+          type: array
+          items:
+            $ref: "#/components/schemas/PublicConnectorOperation"
+          description: ""
+      description: ""
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+security:
+  - bearerAuth: []
+tags:
+  - name: Overview
+    x-displayName: Overview
+    description:
+      $ref: descriptions/tags/overview.html
+  - name: Authentication
+    x-displayName: Authentication
+    description:
+      $ref: descriptions/tags/authentication.html
+  - name: RateLimiting
+    x-displayName: Rate Limiting + Pagination
+    description:
+      $ref: descriptions/tags/rateLimiting.html
+  - name: Whitelabelling
+    x-displayName: Whitelabelling
+    description:
+      $ref: descriptions/tags/whitelabelling.html
+  - name: ExampleCallConnector
+    x-displayName: Example - Call Connector
+    description:
+      $ref: descriptions/tags/exampleUseCase.html
+  - name: DynamicDDL
+    x-displayName: Dynamic DDL Inputs
+    description:
+      $ref: descriptions/tags/dynamicDDL.html
+  - name: TroubleShooting
+    x-displayName: Troubleshooting
+    description:
+      $ref: descriptions/tags/troubleShooting.html
+  - name: FAQs
+    x-displayName: FAQs
+    description:
+      $ref: descriptions/tags/faqs.html
+x-tagGroups:
+  - name: Guidance
+    tags:
+      - Overview
+      - Authentication
+      - RateLimiting
+      - Whitelabelling
+      - BestPractices
+      - ExampleCallConnector
+      - DynamicDDL
+      - TroubleShooting
+      - FAQs
+  - name: Endpoints
+    tags:
+      - connectors
+      - authentications
+      - services
+servers:
+  - url: https://api.tray.io
+    description: AMER
+  - url: https://eu1.api.tray.io
+    description: EU
+  - url: https://ap1.api.tray.io
+    description: APAC

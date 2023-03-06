@@ -1,4 +1,4 @@
-import { lighten, darken, readableColor } from 'polished';
+import { lighten, darken, readableColor } from "polished";
 
 export const theme = {
   // spacing: {
@@ -6,16 +6,16 @@ export const theme = {
   //   sectionHorizontal: ({ spacing }) => spacing.unit * 8,
   //   sectionVertical: ({ spacing }) => spacing.unit * 8,
   // },
-  // breakpoints: {
-  //   xs: 0,
-  //   small: '550px',
-  //   medium: '900px',
-  //   large: '1200px',
-  // },
+  breakpoints: {
+    // xs: 0,
+    small: "50rem",
+    medium: "75rem",
+    // large: "1200px",
+  },
   colors: {
-    // tonalOffset: 0.2,
+    tonalOffset: 0.2,
     primary: {
-      main: '#227a88',
+      main: "#227a88",
       // light: ({ colors }) => lighten(colors.tonalOffset, colors.primary.main),
       // dark: ({ colors }) => darken(colors.tonalOffset, colors.primary.main),
       // contrastText: ({ colors }) => readableColor(colors.primary.main),
@@ -45,7 +45,7 @@ export const theme = {
     //   contrastText: ({ colors }) => readableColor(colors.info.main),
     // },
     text: {
-      primary: '#424242',
+      primary: "#03073D",
       // secondary: '#4e566d',
     },
     // border: {
@@ -71,45 +71,46 @@ export const theme = {
     //   },
     // },
     http: {
-      get: '#6bbd5b',
-      post: '#248fb2',
-      put: '#9b708b',
-      options: '#d3ca12',
-      patch: '#e09d43',
-      delete: '#e27a7a',
-      basic: '#999',
-      link: '#31bbb6',
-      head: '#c167e4',
+      get: "#6bbd5b",
+      post: "#248fb2",
+      put: "#9b708b",
+      options: "#d3ca12",
+      patch: "#e09d43",
+      delete: "#e27a7a",
+      basic: "#999",
+      link: "#31bbb6",
+      head: "#c167e4",
     },
-    // navbar: {
-    //   main: ({ colors }) => colors.primary.main,
-    //   gradient: ({ colors }) => darken(colors.tonalOffset / 2, colors.navbar.main),
-    //   contrastText: 'white'
-    // },
-    // footer: {
-      // main: ({ colors }) => colors.primary.main,
-      // contrastText: 'white'
-    // },
+    navbar: {
+      main: ({ colors }) => "rgb(74, 84, 245)",
+      gradient: ({ colors }) =>
+        darken(colors.tonalOffset / 10, colors.navbar.main),
+      contrastText: "white",
+    },
+    footer: {
+      main: ({ colors }) => "rgb(74, 84, 245)",
+      // contrastText: "white",
+    },
   },
 
   sidebar: {
-    backgroundColor: '#fafafa',
-    width: '260px',
+    backgroundColor: "#FAFAFA",
+    width: "260px",
   },
   // tocPanel: {
   //   width: '240px',
   // },
 
   typography: {
-    fontSize: '16px',
-    lineHeight: '1.5em',
-    fontWeightRegular: '400',
-    fontWeightBold: '600',
-    fontWeightLight: '300',
+    fontSize: "16px",
+    lineHeight: "1.5em",
+    fontWeightRegular: "400",
+    fontWeightBold: "600",
+    fontWeightLight: "300",
     fontFamily: '"Source Sans Pro", sans-serif',
     headings: {
       fontFamily: '"Source Sans Pro", sans-serif',
-      fontWeight: '600',
+      fontWeight: "600",
     },
     // heading1: {
     //   fontSize: '1.85714em',
@@ -145,11 +146,11 @@ export const theme = {
     // // ...
     // },
     code: {
-      fontSize: '13px',
+      fontSize: "13px",
       fontFamily: '"Source Code Pro", sans-serif',
       // fontWeight: ({ typography }) => typography.fontWeightRegular,
-      color: '#e53935',
-      backgroundColor: 'rgba(38, 50, 56, 0.04)',
+      color: "#e53935",
+      backgroundColor: "rgba(38, 50, 56, 0.04)",
       wrap: false,
     },
     links: {
@@ -159,12 +160,12 @@ export const theme = {
     },
   },
   rightPanel: {
-    backgroundColor: '#263238',
-    width: '40%',
+    backgroundColor: "#263238",
+    width: "40%",
     // textColor: '#ffffff',
   },
   schema: {
-    nestedBackground: '#fafafa',
+    nestedBackground: "#fafafa",
     // linesColor: theme => lighten( theme.colors.tonalOffset, desaturate(theme.colors.tonalOffset, theme.colors.primary.main) ),
     // defaultDetailsWidth: '75%',
     // typeNameColor: theme => theme.colors.text.secondary,

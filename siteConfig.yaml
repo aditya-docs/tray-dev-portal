@@ -1,55 +1,77 @@
-meta:
-  title: Redocly Training
-  description: The best API documentation generator ever.
-  siteUrl: https://developer-portal-starter.redoc.ly
-  keywords: redocly developer portal, api portal starter, api reference docs
+seo:
+  title: Tray.io Developer Portal
+  description: Learn how to work with Tray APIs
+  siteUrl: https://www.tray.io
+  image: ./images/tray-logo.png
+  keywords: "connectivity, connectors, integration, tray, tray.io, api, documentation, developer"
   lang: en-US
 linkChecker:
   severity: warning
   options:
     CheckExternal: false
 logo:
-  image: ./images/logo.png
-  altText: Redocly Training
+  image: ./images/tray-logo.svg
+  altText: Tray.io developer portal
 toc:
   enable: true
+  maxDepth: 3
+disableLastModified: true
+showPrevButton: true
+showNextButton: true
 oasDefinitions:
-  petstore: ./openapi/petstore.yaml
+  trayapi: ./openapi/openapi.yaml
   # add links to definitions in our API registry by using a fully qualified URL.
 stylesheets:
+  - css/landing.css
   - https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap
   - https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,600,700&display=swap
 #analytics:
-  # ga:
-  # note that GA doesn't work in the development environment
-  #  trackingId: UA-45997213-1
+# ga:
+# note that GA doesn't work in the development environment
+#  trackingId: UA-45997213-1
 #scripts:
 #  - ./static/intercom.js
 nav:
-
-  - label: Training exercises
+  - label: API docs
     page: developer-portal/index.md
-
-  - label: External docs
-    icon: ./images/redocly-icon-white.png
-    href: https://redoc.ly/docs/developer-portal/introduction/
-
+  - label: Embedded APIs
+    href: "https://embedded-api-docs.tray.io/"
   - search: true
 
 footer:
-  copyrightText: Copyright © Redocly 2019-2021. All right reserved.
+  copyrightText: © Copyright 2023 Tray.io, Inc. All rights reserved.
   columns:
     - group: Legal
       items:
         - label: Terms of Use
-          href: 'https://redoc.ly/subscription-agreement/'
+          href: "https://tray.io/terms"
         - label: Privacy Notice
-          href: 'https://redoc.ly/privacy-notice/'
+          href: "https://tray.io/privacy"
         - label: Cookie Notice
-          href: 'https://redoc.ly/cookie-notice/'
+          href: "#"
     - group: Support
       items:
         - label: FAQ
           page: faq.md
-        - label: Contact us
-          page: contact.mdx
+        - label: Raising Ticket
+          href: "https://tray.io/documentation/help/getting-support/creating-a-support-ticket/"
+    - group: Resources
+      items:
+        - label: Documentation
+          href: "https://tray.io/documentation"
+        - label: Blog
+          href: "https://tray.io/blog"
+        - label: Webinars + Events
+          href: "https://tray.io/events"
+    - group: Contact
+      items:
+        - label: "US: +1-415-418-3570"
+          href: "https://tray.io/tel:+14154183570"
+        - label: "UK: +44 20 3882 4293"
+          href: "https://tray.io/tel:+442038824293"
+        - label: "AU: +61 2 7208 8487"
+          href: "https://tray.io/tel:+61272088487"
+        - label: 25 Stillman Street
+            San Francisco
+            CA 94107
+            United States

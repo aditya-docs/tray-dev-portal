@@ -1,0 +1,50 @@
+a[role="button"] {
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1.5rem;
+  background: transparent;
+  color: white;
+}
+
+a[role="button"]:hover {
+  color: rgb(74, 84, 245);
+  background: white;
+}
+
+nav + div > div:nth-child(2) {
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+}
+
+section[data="[object Object]"] > div:nth-child(2) {
+  width: 100%;
+  text-align: left;
+  padding: 5% 20%;
+  /* background-color: #e3e3e3; */
+  margin: 0px;
+  color: #4a4a4a;
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 992px) {
+  nav + div {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  nav + div > div {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  nav + div > div:nth-child(2) {
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+  }
+  section[data="[object Object]"] > div:first-child {
+    height: 100vh;
+    padding: 0px;
+  }
+}
