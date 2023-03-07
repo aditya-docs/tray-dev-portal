@@ -29,9 +29,9 @@ export default LandingLayout;
 <Jumbotron>
   <NavBar location={props.location} standalone={false} />
   <Flex p={20} justifyContent="space-evenly">
-    <div marginRight="10px">
-      <h1 textAlign="left">Tray.io Developer portal</h1>
-      <h2 textAlign="left">
+    <div style={{marginRight: "10px"}}>
+      <h1 style={{textAlign: "left"}}>Tray.io Developer portal</h1>
+      <h2 style={{textAlign: "left"}}>
         Leverage Tray.io's APIs to power your embedded integrations
       </h2>
       <Flex justifyContent="flex-start">
@@ -47,15 +47,15 @@ export default LandingLayout;
       </Flex>
     </div>
     <Flex>
-      <img src="https://images.ctfassets.net/7rbn0raz0t75/LT4m5nSsFGbCu0G9K63nw/97b0c4874ca334f9342380ea59c39c24/Embedded_-_Connectivity.png" alt="Tray Developer docs - Hero" width="100%" height="auto" />
+      <img src="https://images.ctfassets.net/7rbn0raz0t75/LT4m5nSsFGbCu0G9K63nw/97b0c4874ca334f9342380ea59c39c24/Embedded_-_Connectivity.png" alt="Tray Developer docs - Hero" style={{width: "100%", height: "auto"}} />
     </Flex>
   </Flex>
 </Jumbotron>
 <Box my={25}>
-  <h2 margin="0px" fontSize="2rem" marginBottom="1rem">
+  <h2 style={{margin: "0px", fontSize: "2rem", marginBottom: "1rem"}}>
     <Emphasis>Build with Tray.io APIs</Emphasis>
   </h2>
-  <div flexWrap="wrap">
+  <div style={{flexWrap: "wrap"}}>
     <p>
       Tray's APIs allow you to leverage the power of Tray's service connectors,
       without having to make use of the Builder UI.
@@ -66,23 +66,23 @@ export default LandingLayout;
     </p>
     <p>
       The following APIs are available:
-      <ul>
-        <li>
-          <Emphasis>Auths API</Emphasis> for creating, retrieving and deleting
-          authentications for particular services
-        </li>
-        <li>
-          <Emphasis>Connectors API</Emphasis> for calling individual operations
-          for particular service connectors
-        </li>
-        <li>
-          <Emphasis>Embedded API (GraphQL)</Emphasis> for managing and
-          displaying the Solutions and Instances which drive your Tray
-          integrations
-        </li>
-      </ul>
     </p>
-    <h3 textAlign="right" paddingRight="2rem">
+    <ul>
+      <li>
+        <Emphasis>Auths API</Emphasis> for creating, retrieving and deleting
+        authentications for particular services
+      </li>
+      <li>
+        <Emphasis>Connectors API</Emphasis> for calling individual operations
+        for particular service connectors
+      </li>
+      <li>
+        <Emphasis>Embedded API (GraphQL)</Emphasis> for managing and
+        displaying the Solutions and Instances which drive your Tray
+        integrations
+      </li>
+    </ul>
+    <h3 style={{textAlign: "right", paddingRight: "2rem"}}>
       Happy building!
     </h3>
   </div>
