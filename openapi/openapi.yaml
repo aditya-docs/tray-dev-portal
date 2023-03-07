@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Tray APIs
-  version: ""
+  version: ''
   x-logo:
     url: tray-logo.svg
     altText: Tray.io logo
@@ -10,7 +10,7 @@ paths:
     post:
       summary: Create user authentication
       description:
-        $ref: descriptions/endpoints/authentications/createAuthentication.html
+        $ref: descriptions/endpoints/authentications/createAuthentication.md
       operationId: create-user-authentication
       parameters:
         - name: Authorization
@@ -24,72 +24,64 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/CreatePublicUserAuthentication"
+              $ref: '#/components/schemas/CreatePublicUserAuthentication'
         required: true
       responses:
-        "200":
-          description:
-            $ref: descriptions/responses/authentications/createAuthentication200.html
+        '200':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CreatePublicUserAuthenticationResult"
-        "400":
-          description:
-            $ref: descriptions/responses/authentications/createAuthentication400.html
+                $ref: '#/components/schemas/CreatePublicUserAuthenticationResult'
+        '400':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InvalidInput"
-        "401":
-          description:
-            $ref: descriptions/responses/authentications/createAuthentication401.html
+                $ref: '#/components/schemas/InvalidInput'
+        '401':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Unauthorized"
-        "403":
-          description:
-            $ref: descriptions/responses/authentications/createAuthentication403.html
+                $ref: '#/components/schemas/Unauthorized'
+        '403':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Forbidden"
-        "404":
-          description:
-            $ref: descriptions/responses/authentications/createAuthentication404.html
+                $ref: '#/components/schemas/Forbidden'
+        '404':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ResourceNotFound"
-        "429":
-          description:
-            $ref: descriptions/responses/authentications/createAuthentication429.html
+                $ref: '#/components/schemas/ResourceNotFound'
+        '429':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/LimitExceeded"
-        "500":
-          description:
-            $ref: descriptions/responses/authentications/createAuthentication500.html
+                $ref: '#/components/schemas/LimitExceeded'
+        '500':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InternalError"
+                $ref: '#/components/schemas/InternalError'
         default:
-          description:
-            $ref: descriptions/responses/defaultError.html
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InternalError"
+                $ref: '#/components/schemas/InternalError'
       tags:
         - authentications
   /core/v1/authentications/{authentication-id}:
     get:
       summary: Get user authentication
       description:
-        $ref: descriptions/endpoints/authentications/getAuthenticationById.html
+        $ref: descriptions/endpoints/authentications/getAuthenticationById.md
       operationId: get-user-authentication
       parameters:
         - name: authentication-id
@@ -108,68 +100,60 @@ paths:
           example: Bearer 3fd74d349xxxxxxxxxxxxxxxxxxxxxxxxd90df521
           description: Pass your master token here
       responses:
-        "200":
-          description:
-            $ref: descriptions/responses/authentications/getAuthenticationById200.html
+        '200':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/GetUserAuthenticationResult"
-        "400":
-          description:
-            $ref: descriptions/responses/authentications/getAuthenticationById400.html
+                $ref: '#/components/schemas/GetUserAuthenticationResult'
+        '400':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InvalidInput"
-        "401":
-          description:
-            $ref: descriptions/responses/authentications/getAuthenticationById401.html
+                $ref: '#/components/schemas/InvalidInput'
+        '401':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Unauthorized"
-        "403":
-          description:
-            $ref: descriptions/responses/authentications/getAuthenticationById403.html
+                $ref: '#/components/schemas/Unauthorized'
+        '403':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Forbidden"
-        "404":
-          description:
-            $ref: descriptions/responses/authentications/getAuthenticationById404.html
+                $ref: '#/components/schemas/Forbidden'
+        '404':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ResourceNotFound"
-        "429":
-          description:
-            $ref: descriptions/responses/authentications/getAuthenticationById429.html
+                $ref: '#/components/schemas/ResourceNotFound'
+        '429':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/LimitExceeded"
-        "500":
-          description:
-            $ref: descriptions/responses/authentications/getAuthenticationById500.html
+                $ref: '#/components/schemas/LimitExceeded'
+        '500':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InternalError"
+                $ref: '#/components/schemas/InternalError'
         default:
-          description:
-            $ref: descriptions/responses/defaultError.html
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InternalError"
+                $ref: '#/components/schemas/InternalError'
       tags:
         - authentications
     delete:
       summary: Delete user authentication
       description:
-        $ref: descriptions/endpoints/authentications/deleteAuthenticationById.html
+        $ref: descriptions/endpoints/authentications/deleteAuthenticationById.md
       operationId: delete-user-authentication
       parameters:
         - name: authentication-id
@@ -188,58 +172,57 @@ paths:
           example: Bearer 3fd74d349xxxxxxxxxxxxxxxxxxxxxxxxd90df521
           description: Pass your master token here
       responses:
-        "200":
-          description: $ref:descriptions/responses/authentications/deleteAuthenticationById200.html
-        "400":
-          description: $ref:descriptions/responses/authentications/deleteAuthenticationById400.html
+        '200':
+          description: ''
+        '400':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InvalidInput"
-        "401":
-          description: $ref:descriptions/responses/authentications/deleteAuthenticationById401.html
+                $ref: '#/components/schemas/InvalidInput'
+        '401':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Unauthorized"
-        "403":
-          description: $ref:descriptions/responses/authentications/deleteAuthenticationById403.html
+                $ref: '#/components/schemas/Unauthorized'
+        '403':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Forbidden"
-        "404":
-          description: $ref:descriptions/responses/authentications/deleteAuthenticationById404.html
+                $ref: '#/components/schemas/Forbidden'
+        '404':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ResourceNotFound"
-        "429":
-          description: $ref:descriptions/responses/authentications/deleteAuthenticationById429.html
+                $ref: '#/components/schemas/ResourceNotFound'
+        '429':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/LimitExceeded"
-        "500":
-          description: $ref:descriptions/responses/authentications/deleteAuthenticationById500.html
+                $ref: '#/components/schemas/LimitExceeded'
+        '500':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InternalError"
+                $ref: '#/components/schemas/InternalError'
         default:
-          description:
-            $ref: descriptions/responses/defaultError.html
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InternalError"
+                $ref: '#/components/schemas/InternalError'
       tags:
         - authentications
   /core/v1/authentications/{authentication-id}/full:
     get:
       summary: Decrypt user authentication
       description:
-        $ref: descriptions/endpoints/authentications/getFullAuthenticationById.html
+        $ref: descriptions/endpoints/authentications/getFullAuthenticationById.md
       operationId: decrypt-user-authentication
       parameters:
         - name: authentication-id
@@ -258,62 +241,61 @@ paths:
           example: Bearer 3fd74d349xxxxxxxxxxxxxxxxxxxxxxxxd90df521
           description: Pass your master token here
       responses:
-        "200":
-          description: $ref:descriptions/responses/authentications/getFullAuthenticationById200.html
+        '200':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/GetFullUserAuthenticationResult"
-        "400":
-          description: $ref:descriptions/responses/authentications/getFullAuthenticationById400.html
+                $ref: '#/components/schemas/GetFullUserAuthenticationResult'
+        '400':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InvalidInput"
-        "401":
-          description: $ref:descriptions/responses/authentications/getFullAuthenticationById401.html
+                $ref: '#/components/schemas/InvalidInput'
+        '401':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Unauthorized"
-        "403":
-          description: $ref:descriptions/responses/authentications/getFullAuthenticationById403.html
+                $ref: '#/components/schemas/Unauthorized'
+        '403':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Forbidden"
-        "404":
-          description: $ref:descriptions/responses/authentications/getFullAuthenticationById404.html
+                $ref: '#/components/schemas/Forbidden'
+        '404':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ResourceNotFound"
-        "429":
-          description: $ref:descriptions/responses/authentications/getFullAuthenticationById429.html
+                $ref: '#/components/schemas/ResourceNotFound'
+        '429':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/LimitExceeded"
-        "500":
-          description: $ref:descriptions/responses/authentications/getFullAuthenticationById500.html
+                $ref: '#/components/schemas/LimitExceeded'
+        '500':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InternalError"
+                $ref: '#/components/schemas/InternalError'
         default:
-          description:
-            $ref: descriptions/responses/defaultError.html
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InternalError"
+                $ref: '#/components/schemas/InternalError'
       tags:
         - authentications
   /core/v1/services/{service-name}/versions/{service-version}/environments:
     get:
       summary: Get service environments
       description:
-        $ref: descriptions/endpoints/services/getServiceEnvironments.html
+        $ref: descriptions/endpoints/services/getServiceEnvironments.md
       operationId: get-service-environments
       parameters:
         - name: service-name
@@ -339,62 +321,54 @@ paths:
           example: Bearer 3fd74d349xxxxxxxxxxxxxxxxxxxxxxxxd90df521
           description: Pass your master token here
       responses:
-        "200":
-          description:
-            $ref: descriptions/responses/services/getServiceEnvironments200.html
+        '200':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/PublicServiceEnvironmentList"
-        "400":
-          description:
-            $ref: descriptions/responses/services/getServiceEnvironments400.html
+                $ref: '#/components/schemas/PublicServiceEnvironmentList'
+        '400':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InvalidInput"
-        "401":
-          description:
-            $ref: descriptions/responses/services/getServiceEnvironments401.html
+                $ref: '#/components/schemas/InvalidInput'
+        '401':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Unauthorized"
-        "403":
-          description:
-            $ref: descriptions/responses/services/getServiceEnvironments403.html
+                $ref: '#/components/schemas/Unauthorized'
+        '403':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Forbidden"
-        "404":
-          description:
-            $ref: descriptions/responses/services/getServiceEnvironments404.html
+                $ref: '#/components/schemas/Forbidden'
+        '404':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ResourceNotFound"
-        "429":
-          description:
-            $ref: descriptions/responses/services/getServiceEnvironments429.html
+                $ref: '#/components/schemas/ResourceNotFound'
+        '429':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/LimitExceeded"
-        "500":
-          description:
-            $ref: descriptions/responses/services/getServiceEnvironments500.html
+                $ref: '#/components/schemas/LimitExceeded'
+        '500':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InternalError"
+                $ref: '#/components/schemas/InternalError'
         default:
-          description:
-            $ref: descriptions/responses/defaultError.html
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InternalError"
+                $ref: '#/components/schemas/InternalError'
       tags:
         - services
   /core/v1/connectors:
@@ -410,84 +384,76 @@ paths:
           example: Bearer 3fd74d349xxxxxxxxxxxxxxxxxxxxxxxxd90df521
           description: Pass your master token here
       responses:
-        "200":
-          description:
-            $ref: descriptions/responses/connectors/getConnectors200.html
+        '200':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/PublicConnectorList"
+                $ref: '#/components/schemas/PublicConnectorList'
               examples:
                 Connector List:
                   value:
                     elements:
                       - name: slack
-                        version: "9.0"
+                        version: '9.0'
                         title: Slack
                         description: Slack connector
                       - name: twilio-output
-                        version: "2.1"
+                        version: '2.1'
                         title: Twilio
                         description: Cloud communication platform for developers
                       - name: shopify
-                        version: "4.1"
+                        version: '4.1'
                         title: Shopify
                         description: >-
                           Shopify gives you everything you need to build a
                           successful online business.
-        "400":
-          description:
-            $ref: descriptions/responses/connectors/getConnectors400.html
+        '400':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InvalidInput"
-        "401":
-          description:
-            $ref: descriptions/responses/connectors/getConnectors401.html
+                $ref: '#/components/schemas/InvalidInput'
+        '401':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Unauthorized"
-        "403":
-          description:
-            $ref: descriptions/responses/connectors/getConnectors403.html
+                $ref: '#/components/schemas/Unauthorized'
+        '403':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Forbidden"
-        "404":
-          description:
-            $ref: descriptions/responses/connectors/getConnectors404.html
+                $ref: '#/components/schemas/Forbidden'
+        '404':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ResourceNotFound"
-        "429":
-          description:
-            $ref: descriptions/responses/connectors/getConnectors429.html
+                $ref: '#/components/schemas/ResourceNotFound'
+        '429':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/LimitExceeded"
-        "500":
-          description:
-            $ref: descriptions/responses/connectors/getConnectors500.html
+                $ref: '#/components/schemas/LimitExceeded'
+        '500':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InternalError"
+                $ref: '#/components/schemas/InternalError'
         default:
-          description:
-            $ref: descriptions/responses/defaultError.html
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InternalError"
+                $ref: '#/components/schemas/InternalError'
       tags:
         - connectors
       description:
-        $ref: descriptions/endpoints/connectors/getConnectors.html
+        $ref: descriptions/endpoints/connectors/getConnectors.md
   /core/v1/connectors/{connector-name}/versions/{connector-version}/operations:
     get:
       summary: Get Connector Operations
@@ -505,7 +471,7 @@ paths:
           required: true
           schema:
             type: string
-          example: "9.1"
+          example: '9.1'
           description: The version of the connector
         - name: Authorization
           in: header
@@ -515,13 +481,12 @@ paths:
           example: Bearer 3fd74d349xxxxxxxxxxxxxxxxxxxxxxxxd90df521
           description: Pass your master token here
       responses:
-        "200":
-          description:
-            $ref: descriptions/responses/connectors/getOperations200.html
+        '200':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/PublicConnectorOperationList"
+                $ref: '#/components/schemas/PublicConnectorOperationList'
               examples:
                 Slack Operations List:
                   value:
@@ -568,7 +533,7 @@ paths:
                                 message: list_channels_ddl
                                 input:
                                   include_private_channels: false
-                                  workspace_id: "{{{workspace_id}}}"
+                                  workspace_id: '{{{workspace_id}}}'
                           required:
                             - message
                             - time
@@ -633,7 +598,7 @@ paths:
                                 message: list_channels_ddl
                                 input:
                                   include_private_channels: false
-                                  workspace_id: "{{{workspace_id}}}"
+                                  workspace_id: '{{{workspace_id}}}'
                           required:
                             - message
                             - time
@@ -672,7 +637,7 @@ paths:
                               lookup:
                                 operation: list_worksheets_ddl_return_name
                                 input:
-                                  spreadsheet_id: "{{spreadsheet_id}}"
+                                  spreadsheet_id: '{{spreadsheet_id}}'
                               title: Worksheet name
                             number_of_rows:
                               type: integer
@@ -692,8 +657,8 @@ paths:
                                   lookup:
                                     operation: list_worksheet_column_headers_ddl
                                     input:
-                                      spreadsheet_id: "{{spreadsheet_id}}"
-                                      worksheet_name: "{{worksheet_name}}"
+                                      spreadsheet_id: '{{spreadsheet_id}}'
+                                      worksheet_name: '{{worksheet_name}}'
                                   title: Column heading
                                 operator:
                                   type: string
@@ -782,7 +747,7 @@ paths:
                               lookup:
                                 operation: list_worksheets_ddl_return_name
                                 input:
-                                  spreadsheet_id: "{{spreadsheet_id}}"
+                                  spreadsheet_id: '{{spreadsheet_id}}'
                               title: Worksheet name
                             data:
                               type: array
@@ -797,8 +762,8 @@ paths:
                                     lookup:
                                       operation: list_worksheet_column_headers_ddl
                                       input:
-                                        spreadsheet_id: "{{spreadsheet_id}}"
-                                        worksheet_name: "{{worksheet_name}}"
+                                        spreadsheet_id: '{{spreadsheet_id}}'
+                                        worksheet_name: '{{worksheet_name}}'
                                     title: Column heading
                                   value:
                                     type:
@@ -861,64 +826,57 @@ paths:
                                   type: number
                         hasDynamicOutput: false
                         authScopes: []
-        "400":
-          description:
-            $ref: descriptions/responses/connectors/getOperations400.html
+        '400':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InvalidInput"
-        "401":
-          description:
-            $ref: descriptions/responses/connectors/getOperations401.html
+                $ref: '#/components/schemas/InvalidInput'
+        '401':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Unauthorized"
-        "403":
-          description:
-            $ref: descriptions/responses/connectors/getOperations403.html
+                $ref: '#/components/schemas/Unauthorized'
+        '403':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Forbidden"
-        "404":
-          description:
-            $ref: descriptions/responses/connectors/getOperations404.html
+                $ref: '#/components/schemas/Forbidden'
+        '404':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ResourceNotFound"
-        "429":
-          description:
-            $ref: descriptions/responses/connectors/getOperations429.html
+                $ref: '#/components/schemas/ResourceNotFound'
+        '429':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/LimitExceeded"
-        "500":
-          description:
-            $ref: descriptions/responses/connectors/getOperations500.html
+                $ref: '#/components/schemas/LimitExceeded'
+        '500':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InternalError"
+                $ref: '#/components/schemas/InternalError'
         default:
-          description:
-            $ref: descriptions/responses/defaultError.html
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InternalError"
+                $ref: '#/components/schemas/InternalError'
       tags:
         - connectors
       description:
-        $ref: descriptions/endpoints/connectors/getOperations.html
+        $ref: descriptions/endpoints/connectors/getOperations.md
   /core/v1/connectors/{connector-name}/versions/{connector-version}/call:
     post:
       summary: Call Connector
       description:
-        $ref: descriptions/endpoints/connectors/callConnector.html
+        $ref: descriptions/endpoints/connectors/callConnector.md
       operationId: call-connector
       parameters:
         - name: connector-name
@@ -933,7 +891,7 @@ paths:
           required: true
           schema:
             type: string
-          example: "9.1"
+          example: '9.1'
           description: The version of the connector
         - name: Authorization
           in: header
@@ -946,7 +904,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/PublicConnectorCallPayload"
+              $ref: '#/components/schemas/PublicConnectorCallPayload'
             examples:
               Slack Send Message:
                 value:
@@ -970,13 +928,12 @@ paths:
                     number_of_rows: 100
         required: true
       responses:
-        "200":
-          description:
-            $ref: descriptions/responses/connectors/callConnector200.html
+        '200':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/PublicConnectorCallResult"
+                $ref: '#/components/schemas/PublicConnectorCallResult'
               examples:
                 Slack Send Message:
                   value:
@@ -984,12 +941,12 @@ paths:
                     output:
                       ok: true
                       channel: <aChannel>
-                      ts: "1654555157.195399"
+                      ts: '1654555157.195399'
                       message:
                         type: message
                         subtype: bot_message
                         text: test
-                        ts: "1654555157.195399"
+                        ts: '1654555157.195399'
                         username: <defaultUsername>
                         bot_id: <aBotId>
                         app_id: <anAppId>
@@ -1015,55 +972,48 @@ paths:
                           result:
                             - value2.1
                             - value2.2
-        "400":
-          description:
-            $ref: descriptions/responses/connectors/callConnector400.html
+        '400':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InvalidInput"
-        "401":
-          description:
-            $ref: descriptions/responses/connectors/callConnector401.html
+                $ref: '#/components/schemas/InvalidInput'
+        '401':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Unauthorized"
-        "403":
-          description:
-            $ref: descriptions/responses/connectors/callConnector403.html
+                $ref: '#/components/schemas/Unauthorized'
+        '403':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Forbidden"
-        "404":
-          description:
-            $ref: descriptions/responses/connectors/callConnector404.html
+                $ref: '#/components/schemas/Forbidden'
+        '404':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ResourceNotFound"
-        "429":
-          description:
-            $ref: descriptions/responses/connectors/callConnector429.html
+                $ref: '#/components/schemas/ResourceNotFound'
+        '429':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/LimitExceeded"
-        "500":
-          description:
-            $ref: descriptions/responses/connectors/callConnector500.html
+                $ref: '#/components/schemas/LimitExceeded'
+        '500':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InternalError"
+                $ref: '#/components/schemas/InternalError'
         default:
-          description:
-            $ref: descriptions/responses/defaultError.html
+          description: ''
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InternalError"
+                $ref: '#/components/schemas/InternalError'
       tags:
         - connectors
 components:
@@ -1087,10 +1037,10 @@ components:
       properties:
         name:
           type: string
-          description: ""
+          description: ''
         workspaceId:
           type: string
-          description: ""
+          description: ''
         serviceEnvironmentId:
           type: string
           description: Id of the service. Can be obtained by GET /services
@@ -1107,7 +1057,7 @@ components:
                 additionalProperties:
                   type: object
               - type: string
-          description: ""
+          description: ''
         formData:
           type: object
           additionalProperties:
@@ -1121,12 +1071,12 @@ components:
                 additionalProperties:
                   type: object
               - type: string
-          description: ""
+          description: ''
         scopes:
           type: array
           items:
             type: string
-          description: ""
+          description: ''
     CreatePublicUserAuthenticationResult:
       required:
         - authenticationId
@@ -1135,11 +1085,11 @@ components:
         authenticationId:
           type: string
           format: uuid
-          description: ""
+          description: ''
         externalId:
           type: string
           format: uuid
-          description: ""
+          description: ''
     Forbidden:
       required:
         - message
@@ -1147,10 +1097,10 @@ components:
       properties:
         message:
           type: string
-          description: ""
+          description: ''
         code:
           type: string
-          description: ""
+          description: ''
     GetFullUserAuthenticationResult:
       required:
         - id
@@ -1163,16 +1113,16 @@ components:
         id:
           type: string
           format: uuid
-          description: ""
+          description: ''
         name:
           type: string
-          description: ""
+          description: ''
         workspaceId:
           type: string
-          description: ""
+          description: ''
         serviceEnvironmentId:
           type: string
-          description: ""
+          description: ''
         data:
           type: object
           additionalProperties:
@@ -1186,7 +1136,7 @@ components:
                 additionalProperties:
                   type: object
               - type: string
-          description: ""
+          description: ''
         formData:
           oneOf:
             - type: array
@@ -1198,12 +1148,12 @@ components:
               additionalProperties:
                 type: object
             - type: string
-          description: ""
+          description: ''
         scopes:
           type: array
           items:
             type: string
-          description: ""
+          description: ''
     GetUserAuthenticationResult:
       required:
         - id
@@ -1214,22 +1164,22 @@ components:
         id:
           type: string
           format: uuid
-          description: ""
+          description: ''
         name:
           type: string
-          description: ""
+          description: ''
         workspaceId:
           type: string
-          description: ""
+          description: ''
         serviceEnvironmentId:
           type: string
-          description: ""
+          description: ''
         scopes:
           type: array
           items:
             type: string
-          description: ""
-      description: ""
+          description: ''
+      description: ''
     InternalError:
       required:
         - message
@@ -1237,11 +1187,11 @@ components:
       properties:
         message:
           type: string
-          description: ""
+          description: ''
         code:
           type: string
-          description: ""
-      description: ""
+          description: ''
+      description: ''
     InvalidInput:
       required:
         - message
@@ -1249,11 +1199,11 @@ components:
       properties:
         message:
           type: string
-          description: ""
+          description: ''
         code:
           type: string
-          description: ""
-      description: ""
+          description: ''
+      description: ''
     LimitExceeded:
       required:
         - message
@@ -1261,11 +1211,11 @@ components:
       properties:
         message:
           type: string
-          description: ""
+          description: ''
         code:
           type: string
-          description: ""
-      description: ""
+          description: ''
+      description: ''
     PublicServiceEnvironment:
       required:
         - id
@@ -1277,12 +1227,12 @@ components:
       properties:
         id:
           type: string
-          description: ""
+          description: ''
         title:
           type: string
-          description: ""
+          description: ''
         authenticationType:
-          $ref: "#/components/schemas/AuthenticationType"
+          $ref: '#/components/schemas/AuthenticationType'
         formDataSchema:
           type: object
           additionalProperties:
@@ -1296,7 +1246,7 @@ components:
                 additionalProperties:
                   type: object
               - type: string
-          description: ""
+          description: ''
         dataSchema:
           type: object
           additionalProperties:
@@ -1310,16 +1260,16 @@ components:
                 additionalProperties:
                   type: object
               - type: string
-          description: ""
-      description: ""
+          description: ''
+      description: ''
     PublicServiceEnvironmentList:
       type: object
       properties:
         elements:
           type: array
           items:
-            $ref: "#/components/schemas/PublicServiceEnvironment"
-      description: ""
+            $ref: '#/components/schemas/PublicServiceEnvironment'
+      description: ''
     ResourceNotFound:
       required:
         - message
@@ -1327,11 +1277,11 @@ components:
       properties:
         message:
           type: string
-          description: ""
+          description: ''
         code:
           type: string
-          description: ""
-      description: ""
+          description: ''
+      description: ''
     Unauthorized:
       required:
         - message
@@ -1339,11 +1289,11 @@ components:
       properties:
         message:
           type: string
-          description: ""
+          description: ''
         code:
           type: string
-          description: ""
-      description: ""
+          description: ''
+      description: ''
     PublicConnector:
       required:
         - name
@@ -1354,17 +1304,17 @@ components:
       properties:
         name:
           type: string
-          description: ""
+          description: ''
         version:
           type: string
-          description: ""
+          description: ''
         title:
           type: string
-          description: ""
+          description: ''
         description:
           type: string
-          description: ""
-      description: ""
+          description: ''
+      description: ''
     PublicConnectorCallPayload:
       required:
         - operation
@@ -1373,11 +1323,11 @@ components:
       properties:
         operation:
           type: string
-          description: ""
+          description: ''
         authId:
           type: string
           format: uuid
-          description: ""
+          description: ''
         input:
           type: object
           additionalProperties:
@@ -1391,11 +1341,11 @@ components:
                 additionalProperties:
                   type: object
               - type: string
-          description: ""
+          description: ''
         returnOutputSchema:
           type: boolean
-          description: ""
-      description: ""
+          description: ''
+      description: ''
     PublicConnectorCallResult:
       required:
         - outcome
@@ -1403,7 +1353,7 @@ components:
       type: object
       properties:
         outcome:
-          $ref: "#/components/schemas/PublicConnectorCallResultOutcome"
+          $ref: '#/components/schemas/PublicConnectorCallResultOutcome'
         output:
           type: object
           additionalProperties:
@@ -1417,23 +1367,23 @@ components:
                 additionalProperties:
                   type: object
               - type: string
-          description: ""
-      description: ""
+          description: ''
+      description: ''
     PublicConnectorCallResultOutcome:
       type: string
       enum:
         - success
         - error
-      description: ""
+      description: ''
     PublicConnectorList:
       type: object
       properties:
         elements:
           type: array
           items:
-            $ref: "#/components/schemas/PublicConnector"
-          description: ""
-      description: ""
+            $ref: '#/components/schemas/PublicConnector'
+          description: ''
+      description: ''
     PublicConnectorOperation:
       required:
         - name
@@ -1446,13 +1396,13 @@ components:
       properties:
         name:
           type: string
-          description: ""
+          description: ''
         title:
           type: string
-          description: ""
+          description: ''
         description:
           type: string
-          description: ""
+          description: ''
         inputSchema:
           type: object
           additionalProperties:
@@ -1466,7 +1416,7 @@ components:
                 additionalProperties:
                   type: object
               - type: string
-          description: ""
+          description: ''
         outputSchema:
           type: object
           additionalProperties:
@@ -1480,25 +1430,25 @@ components:
                 additionalProperties:
                   type: object
               - type: string
-          description: ""
+          description: ''
         hasDynamicOutput:
           type: boolean
-          description: ""
+          description: ''
         authScopes:
           type: array
           items:
             type: string
-          description: ""
-      description: ""
+          description: ''
+      description: ''
     PublicConnectorOperationList:
       type: object
       properties:
         elements:
           type: array
           items:
-            $ref: "#/components/schemas/PublicConnectorOperation"
-          description: ""
-      description: ""
+            $ref: '#/components/schemas/PublicConnectorOperation'
+          description: ''
+      description: ''
   securitySchemes:
     bearerAuth:
       type: http
@@ -1509,35 +1459,35 @@ tags:
   - name: Overview
     x-displayName: Overview
     description:
-      $ref: descriptions/tags/overview.html
+      $ref: descriptions/tags/overview.md
   - name: Authentication
     x-displayName: Authentication
     description:
-      $ref: descriptions/tags/authentication.html
+      $ref: descriptions/tags/authentication.md
   - name: RateLimiting
     x-displayName: Rate Limiting + Pagination
     description:
-      $ref: descriptions/tags/rateLimiting.html
+      $ref: descriptions/tags/rateLimiting.md
   - name: Whitelabelling
     x-displayName: Whitelabelling
     description:
-      $ref: descriptions/tags/whitelabelling.html
+      $ref: descriptions/tags/whitelabelling.md
   - name: ExampleCallConnector
     x-displayName: Example - Call Connector
     description:
-      $ref: descriptions/tags/exampleUseCase.html
+      $ref: descriptions/tags/exampleUseCase.md
   - name: DynamicDDL
     x-displayName: Dynamic DDL Inputs
     description:
-      $ref: descriptions/tags/dynamicDDL.html
+      $ref: descriptions/tags/dynamicDDL.md
   - name: TroubleShooting
     x-displayName: Troubleshooting
     description:
-      $ref: descriptions/tags/troubleShooting.html
+      $ref: descriptions/tags/troubleShooting.md
   - name: FAQs
     x-displayName: FAQs
     description:
-      $ref: descriptions/tags/faqs.html
+      $ref: descriptions/tags/faqs.md
 x-tagGroups:
   - name: Guidance
     tags:
