@@ -13,8 +13,13 @@ a[role="button"]:hover {
 
 nav + div > div:nth-child(2) {
   width: 40%;
+  display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url(../images/hero-image.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
 }
 
 section[data="[object Object]"] > div:nth-child(2) {
@@ -39,10 +44,10 @@ section[data="[object Object]"] > div:nth-child(2) {
   }
 
   nav + div > div:nth-child(2) {
-    width: 80%;
-    justify-content: center;
-    align-items: center;
+    height: 52vh;
+    width: 80vw;
   }
+
   section[data="[object Object]"] > div:first-child {
     height: 100vh;
     padding: 0px;
