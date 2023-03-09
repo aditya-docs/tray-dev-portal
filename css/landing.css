@@ -13,12 +13,13 @@ a[role="button"]:hover {
 
 nav + div > div:nth-child(2) {
   width: 40%;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../images/hero-image.png);
+  background-image: url("https://images.ctfassets.net/7rbn0raz0t75/LT4m5nSsFGbCu0G9K63nw/97b0c4874ca334f9342380ea59c39c24/Embedded_-_Connectivity.png");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: contain;
   background-position: center;
 }
 

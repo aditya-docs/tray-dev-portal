@@ -10,6 +10,11 @@
     "clean": "redocly-portal clean"
   },
   "dependencies": {
-    "@redocly/developer-portal": "1.1.0-beta.122"
+    "@redocly/developer-portal": "1.1.0-beta.122",
+    "buffer": "^6.0.3",
+    "graceful-fs": "^4.2.10",
+    "react-app-rewired": "^2.2.1",
+    "stream-browserify": "^3.0.0",
+    "url": "^0.11.0"
   }
 }

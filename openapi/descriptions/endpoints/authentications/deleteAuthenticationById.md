@@ -1,2 +1,1 @@
-"\n Allows users to delete authentications using the authentication's\
-\ id.\n "
+Allows users to delete authentications using the authentication's id.
